@@ -1,19 +1,23 @@
-//
-//  ViewController.swift
-//  ios-hw11-BaikenovAlisher
-//
-//  Created by Alisher on 20.06.2024.
-//
-
+import SnapKit
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupViews()
+        setupConstraints()
     }
-
-
+    
+    // MARK: - Setup Views
+    private func setupViews() {
+        
+        
+    }
+    
+    // MARK: - Setup Constraunts
+    private func setupConstraints() {
+        
+    }
 }
 
