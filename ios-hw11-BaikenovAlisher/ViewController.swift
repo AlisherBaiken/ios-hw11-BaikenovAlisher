@@ -89,7 +89,7 @@ final class ViewController: UIViewController {
         return textField
     }()
     
-    private lazy var signInBtn: UIButton = {
+    private lazy var logInBtn: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
         button.tintColor = .white
@@ -115,8 +115,103 @@ final class ViewController: UIViewController {
         return button
     }()
     
+    private lazy var stackViewForLabelAndBtn: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 2
+        return stackView
+    }()
     
+    private lazy var dontHaveAccount: UILabel = {
+        let label = UILabel()
+        label.text = "Dont have account?"
+        label.textColor = .gray
+        label.font = .systemFont(ofSize: 12)
+        return label
+    }()
     
+    private lazy var signUpBtn: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign up", for: .normal)
+        button.setTitleColor(.purple, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        return button
+    }()
+    
+    private lazy var stackViewForFbookAndTwitt: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        return stackView
+    }()
+    
+    private lazy var facebookBtn: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Facebook", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = UIColor(red: 106/255,
+                                         green: 116/255,
+                                         blue: 207/255,
+                                         alpha: 1.0)
+        button.layer.cornerRadius = 20
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = .zero
+        button.layer.shadowRadius = 10
+        button.layer.shouldRasterize = true
+        button.layer.rasterizationScale = UIScreen.main.scale
+        let iconView = UIView(frame: CGRect(x: 20,
+                                            y: 0,
+                                            width: 50,
+                                            height: 40))
+        let imageView = UIImageView()
+        imageView.image = .fbook
+        imageView.frame = CGRect(x: 20,
+                                 y: 12,
+                                 width: 15,
+                                 height: 20)
+        button.addSubview(imageView)
+        return button
+    }()
+    
+    private lazy var twitterBtn: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Twitter", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = UIColor(red: 106/255,
+                                         green: 116/255,
+                                         blue: 207/255,
+                                         alpha: 1.0)
+        button.layer.cornerRadius = 20
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = .zero
+        button.layer.shadowRadius = 10
+        button.layer.shouldRasterize = true
+        button.layer.rasterizationScale = UIScreen.main.scale
+        let iconView = UIView(frame: CGRect(x: 20,
+                                            y: 0,
+                                            width: 50,
+                                            height: 40))
+        let imageView = UIImageView()
+        imageView.image = .twitter
+        imageView.frame = CGRect(x: 20,
+                                 y: 12,
+                                 width: 20,
+                                 height: 20)
+        button.addSubview(imageView)
+        return button
+    }()
+    
+    private lazy var orConnectWith: UILabel = {
+        let label = UILabel()
+        label.text = "or connect with"
+        label.textColor = .gray
+        label.font = .systemFont(ofSize: 12)
+        return label
+    }()
     
     
     // MARK: - Lifecycle
@@ -134,8 +229,16 @@ final class ViewController: UIViewController {
         view.addSubview(label)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(signInBtn)
+        view.addSubview(logInBtn)
         view.addSubview(frgtYourPass)
+        view.addSubview(stackViewForLabelAndBtn)
+        stackViewForLabelAndBtn.addArrangedSubview(dontHaveAccount)
+        stackViewForLabelAndBtn.addArrangedSubview(signUpBtn)
+        view.addSubview(stackViewForFbookAndTwitt)
+        stackViewForFbookAndTwitt.addArrangedSubview(facebookBtn)
+        stackViewForFbookAndTwitt.addArrangedSubview(twitterBtn)
+        view.addSubview(orConnectWith)
+        
         
     }
     
@@ -169,17 +272,35 @@ final class ViewController: UIViewController {
             make.height.equalTo(40)
         }
         
-        signInBtn.snp.makeConstraints { make in
+        logInBtn.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(40)
             make.leading.trailing.equalTo(passwordTextField)
             make.height.equalTo(40)
         }
         
         frgtYourPass.snp.makeConstraints { make in
-            make.top.equalTo(signInBtn.snp.bottom).offset(20)
+            make.top.equalTo(logInBtn.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
-            
         }
         
+        stackViewForLabelAndBtn.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-50)
+            make.leading.equalTo(110)
+            make.trailing.equalTo(-110)
+            make.height.equalTo(40)
+        }
+        
+        stackViewForFbookAndTwitt.snp.makeConstraints { make in
+            make.bottom.equalTo(stackViewForLabelAndBtn.snp.top).offset(-40)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-30)
+            make.height.equalTo(40)
+        }
+        
+        orConnectWith.snp.makeConstraints { make in
+            make.bottom.equalTo(stackViewForFbookAndTwitt.snp.top).offset(-30)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(40)
+        }
     }
 }
