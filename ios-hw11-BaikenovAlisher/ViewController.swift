@@ -3,16 +3,10 @@ import UIKit
 
 final class ViewController: UIViewController {
     // MARK: - UI
-    private lazy var waveFirst: UIImageView = {
-        let waveFirst = UIImageView()
-        waveFirst.image = .wave1
-        return waveFirst
-    }()
-    
-    private lazy var waveSecond: UIImageView = {
-        let waveSecond = UIImageView()
-        waveSecond.image = .wave2
-        return waveSecond
+    private lazy var backgroundImage: UIImageView = {
+        let backgroundImage = UIImageView()
+        backgroundImage.image = .background
+        return backgroundImage
     }()
     
     private lazy var loginLabel: UILabel = {
@@ -28,13 +22,6 @@ final class ViewController: UIViewController {
         textField.placeholder = "Email "
         textField.font = .systemFont(ofSize: 12)
         textField.backgroundColor = .white
-        textField.layer.cornerRadius = 20
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOpacity = 0.3
-        textField.layer.shadowOffset = .zero
-        textField.layer.shadowRadius = 10
-        textField.layer.shouldRasterize = true
-        textField.layer.rasterizationScale = UIScreen.main.scale
         textField.setLeftIcon(.logMan)
         return textField
         
@@ -45,13 +32,6 @@ final class ViewController: UIViewController {
         textField.placeholder = "Password "
         textField.font = .systemFont(ofSize: 12)
         textField.backgroundColor = .white
-        textField.layer.cornerRadius = 20
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOpacity = 0.3
-        textField.layer.shadowOffset = .zero
-        textField.layer.shadowRadius = 10
-        textField.layer.shouldRasterize = true
-        textField.layer.rasterizationScale = UIScreen.main.scale
         textField.setLeftIcon(.lock)
         return textField
     }()
@@ -64,13 +44,6 @@ final class ViewController: UIViewController {
                                          green: 116/255,
                                          blue: 207/255,
                                          alpha: 1.0)
-        button.layer.cornerRadius = 20
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.3
-        button.layer.shadowOffset = .zero
-        button.layer.shadowRadius = 10
-        button.layer.shouldRasterize = true
-        button.layer.rasterizationScale = UIScreen.main.scale
         return button
     }()
     
@@ -82,7 +55,7 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    private lazy var stackViewForLabelAndBtn: UIStackView = {
+    private lazy var stackViewForLabelAndButton: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
@@ -98,7 +71,7 @@ final class ViewController: UIViewController {
         return label
     }()
     
-    private lazy var signUpBtn: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign up", for: .normal)
         button.setTitleColor(.purple, for: .normal)
@@ -106,7 +79,7 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    private lazy var stackViewForFbookAndTwitt: UIStackView = {
+    private lazy var stackViewForFacebookAndTwitt: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -114,7 +87,7 @@ final class ViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var facebookBtn: UIButton = {
+    private lazy var facebookButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Facebook", for: .normal)
         button.tintColor = .white
@@ -122,13 +95,6 @@ final class ViewController: UIViewController {
                                          green: 116/255,
                                          blue: 207/255,
                                          alpha: 1.0)
-        button.layer.cornerRadius = 20
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.3
-        button.layer.shadowOffset = .zero
-        button.layer.shadowRadius = 10
-        button.layer.shouldRasterize = true
-        button.layer.rasterizationScale = UIScreen.main.scale
         let iconView = UIView(frame: CGRect(x: 20,
                                             y: 0,
                                             width: 50,
@@ -143,7 +109,7 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    private lazy var twitterBtn: UIButton = {
+    private lazy var twitterButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Twitter", for: .normal)
         button.tintColor = .white
@@ -166,7 +132,7 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    private lazy var orConnectWith: UILabel = {
+    private lazy var orConnectWithLabel: UILabel = {
         let label = UILabel()
         label.text = "or connect with"
         label.textColor = .gray
@@ -185,48 +151,64 @@ final class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        twitterBtn.layer.cornerRadius = 20
-        twitterBtn.layer.shadowColor = UIColor.black.cgColor
-        twitterBtn.layer.shadowOpacity = 0.3
-        twitterBtn.layer.shadowOffset = .zero
-        twitterBtn.layer.shadowRadius = 10
-        twitterBtn.layer.shouldRasterize = true
+        emailTextField.layer.cornerRadius = 20
+        emailTextField.layer.shadowColor = UIColor.black.cgColor
+        emailTextField.layer.shadowOpacity = 0.3
+        emailTextField.layer.shadowOffset = .zero
+        emailTextField.layer.shadowRadius = 10
+        emailTextField.layer.shouldRasterize = true
+        emailTextField.layer.rasterizationScale = UIScreen.main.scale
+        
+        passwordTextField.layer.cornerRadius = 20
+        passwordTextField.layer.shadowColor = UIColor.black.cgColor
+        passwordTextField.layer.shadowOpacity = 0.3
+        passwordTextField.layer.shadowOffset = .zero
+        passwordTextField.layer.shadowRadius = 10
+        passwordTextField.layer.shouldRasterize = true
+        passwordTextField.layer.rasterizationScale = UIScreen.main.scale
+        
+        loginButton.layer.cornerRadius = 20
+        loginButton.layer.shadowColor = UIColor.black.cgColor
+        loginButton.layer.shadowOpacity = 0.3
+        loginButton.layer.shadowOffset = .zero
+        loginButton.layer.shadowRadius = 10
+        loginButton.layer.shouldRasterize = true
+        loginButton.layer.rasterizationScale = UIScreen.main.scale
+        
+        facebookButton.layer.cornerRadius = 20
+        facebookButton.layer.shadowColor = UIColor.black.cgColor
+        facebookButton.layer.shadowOpacity = 0.3
+        facebookButton.layer.shadowOffset = .zero
+        facebookButton.layer.shadowRadius = 10
+        facebookButton.layer.shouldRasterize = true
+        facebookButton.layer.rasterizationScale = UIScreen.main.scale
+        
+        twitterButton.layer.cornerRadius = 20
+        twitterButton.layer.shadowColor = UIColor.black.cgColor
+        twitterButton.layer.shadowOpacity = 0.3
+        twitterButton.layer.shadowOffset = .zero
+        twitterButton.layer.shadowRadius = 10
+        twitterButton.layer.shouldRasterize = true
+        
     }
     
     // MARK: - Setup Views
     private func setupViews() {
         view.backgroundColor = .white
-        view.addSubview(waveSecond)
-        view.addSubview(waveFirst)
-        view.addSubview(loginLabel)
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
-        view.addSubview(forgotButton)
-        view.addSubview(stackViewForLabelAndBtn)
         
-//        [waveSecond, waveFirst, loginLabel, emailTextField].forEach {
-//            view.addSubview($0)
-//        }
-        
-        stackViewForLabelAndBtn.addArrangedSubview(dontHaveAccount)
-        stackViewForLabelAndBtn.addArrangedSubview(signUpBtn)
-        view.addSubview(stackViewForFbookAndTwitt)
-        stackViewForFbookAndTwitt.addArrangedSubview(facebookBtn)
-        stackViewForFbookAndTwitt.addArrangedSubview(twitterBtn)
-        view.addSubview(orConnectWith)
-        
-        
+        [backgroundImage, loginLabel, emailTextField, passwordTextField, loginButton, forgotButton, stackViewForLabelAndButton, stackViewForFacebookAndTwitt, orConnectWithLabel ].forEach {
+            view.addSubview($0)
+        }
+        stackViewForLabelAndButton.addArrangedSubview(dontHaveAccount)
+        stackViewForLabelAndButton.addArrangedSubview(signUpButton)
+        stackViewForFacebookAndTwitt.addArrangedSubview(facebookButton)
+        stackViewForFacebookAndTwitt.addArrangedSubview(twitterButton)
+      
     }
     
     // MARK: - Setup Constraunts
     private func setupConstraints() {
-        waveSecond.snp.makeConstraints { make in
-            make.top.equalTo(waveFirst.snp.bottom).offset(-100)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-        }
-        waveFirst.snp.makeConstraints { make in
+        backgroundImage.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
@@ -261,23 +243,21 @@ final class ViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        stackViewForLabelAndBtn.snp.makeConstraints { make in
+        stackViewForLabelAndButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-50)
-//            make.leading.equalTo(110)
-//            make.trailing.equalTo(-110)
             make.centerX.equalToSuperview()
             make.height.equalTo(40)
         }
         
-        stackViewForFbookAndTwitt.snp.makeConstraints { make in
-            make.bottom.equalTo(stackViewForLabelAndBtn.snp.top).offset(-40)
+        stackViewForFacebookAndTwitt.snp.makeConstraints { make in
+            make.bottom.equalTo(stackViewForLabelAndButton.snp.top).offset(-40)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-30)
             make.height.equalTo(40)
         }
         
-        orConnectWith.snp.makeConstraints { make in
-            make.bottom.equalTo(stackViewForFbookAndTwitt.snp.top).offset(-30)
+        orConnectWithLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(stackViewForFacebookAndTwitt.snp.top).offset(-30)
             make.centerX.equalToSuperview()
             make.height.equalTo(40)
         }
@@ -286,11 +266,18 @@ final class ViewController: UIViewController {
 
 extension UITextField {
     func setLeftIcon(_ image: UIImage) {
-        let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
+        let iconView = UIImageView(frame: CGRect(x: 20,
+                                                 y: 12,
+                                                 width: 13,
+                                                 height: 15))
         iconView.image = image
-        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20,
+                                                             y: 0,
+                                                             width: 50,
+                                                             height: 40))
         iconContainerView.addSubview(iconView)
         leftView = iconContainerView
         leftViewMode = .always
     }
 }
+
