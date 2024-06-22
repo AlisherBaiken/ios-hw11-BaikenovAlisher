@@ -71,6 +71,7 @@ final class ViewController: UIViewController {
         button.layer.shadowRadius = 10
         button.layer.shouldRasterize = true
         button.layer.rasterizationScale = UIScreen.main.scale
+        button.addTarget(self, action: #selector(loginButtonDidPress), for: .touchUpInside)
         return button
     }()
     
@@ -281,6 +282,16 @@ final class ViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(40)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    private func loginButtonDidPress() {
+        let controller = SecondController()
+        controller.modalPresentationStyle = .overFullScreen
+//        present(controller, animated: true)
+//        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

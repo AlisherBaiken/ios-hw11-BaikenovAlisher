@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D8EBE252C269478000BDA7A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6D8EBE242C269478000BDA7A /* SnapKit */; };
+		6D8EBE272C269993000BDA7A /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EBE262C269993000BDA7A /* SecondController.swift */; };
+		6D8EBE292C269C04000BDA7A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EBE282C269C04000BDA7A /* TabbarController.swift */; };
 		744B04392C240610000A1E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B04382C240610000A1E89 /* AppDelegate.swift */; };
 		744B043B2C240610000A1E89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B043A2C240610000A1E89 /* SceneDelegate.swift */; };
 		744B043D2C240610000A1E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B043C2C240610000A1E89 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D8EBE262C269993000BDA7A /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		6D8EBE282C269C04000BDA7A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		744B04352C240610000A1E89 /* ios-hw11-BaikenovAlisher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-hw11-BaikenovAlisher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		744B04382C240610000A1E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		744B043A2C240610000A1E89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,12 +60,14 @@
 		744B04372C240610000A1E89 /* ios-hw11-BaikenovAlisher */ = {
 			isa = PBXGroup;
 			children = (
+				6D8EBE262C269993000BDA7A /* SecondController.swift */,
 				744B04382C240610000A1E89 /* AppDelegate.swift */,
 				744B043A2C240610000A1E89 /* SceneDelegate.swift */,
 				744B043C2C240610000A1E89 /* ViewController.swift */,
 				744B04412C240611000A1E89 /* Assets.xcassets */,
 				744B04432C240611000A1E89 /* LaunchScreen.storyboard */,
 				744B04462C240611000A1E89 /* Info.plist */,
+				6D8EBE282C269C04000BDA7A /* TabbarController.swift */,
 			);
 			path = "ios-hw11-BaikenovAlisher";
 			sourceTree = "<group>";
@@ -143,7 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				744B043D2C240610000A1E89 /* ViewController.swift in Sources */,
+				6D8EBE272C269993000BDA7A /* SecondController.swift in Sources */,
 				744B04392C240610000A1E89 /* AppDelegate.swift in Sources */,
+				6D8EBE292C269C04000BDA7A /* TabbarController.swift in Sources */,
 				744B043B2C240610000A1E89 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
