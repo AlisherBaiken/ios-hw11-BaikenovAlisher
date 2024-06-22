@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D8EBE252C269478000BDA7A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6D8EBE242C269478000BDA7A /* SnapKit */; };
 		744B04392C240610000A1E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B04382C240610000A1E89 /* AppDelegate.swift */; };
 		744B043B2C240610000A1E89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B043A2C240610000A1E89 /* SceneDelegate.swift */; };
 		744B043D2C240610000A1E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B043C2C240610000A1E89 /* ViewController.swift */; };
 		744B04422C240611000A1E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744B04412C240611000A1E89 /* Assets.xcassets */; };
 		744B04452C240611000A1E89 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 744B04442C240611000A1E89 /* Base */; };
-		744B044E2C240740000A1E89 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 744B044D2C240740000A1E89 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				744B044E2C240740000A1E89 /* SnapKit in Frameworks */,
+				6D8EBE252C269478000BDA7A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = "ios-hw11-BaikenovAlisher";
 			packageProductDependencies = (
-				744B044D2C240740000A1E89 /* SnapKit */,
+				6D8EBE242C269478000BDA7A /* SnapKit */,
 			);
 			productName = "ios-hw11-BaikenovAlisher";
 			productReference = 744B04352C240610000A1E89 /* ios-hw11-BaikenovAlisher.app */;
@@ -114,7 +114,7 @@
 			);
 			mainGroup = 744B042C2C240610000A1E89;
 			packageReferences = (
-				744B044C2C240740000A1E89 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6D8EBE232C269478000BDA7A /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 744B04362C240610000A1E89 /* Products */;
 			projectDirPath = "";
@@ -296,6 +296,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +325,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,9 +363,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		744B044C2C240740000A1E89 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		6D8EBE232C269478000BDA7A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.1;
@@ -372,9 +374,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		744B044D2C240740000A1E89 /* SnapKit */ = {
+		6D8EBE242C269478000BDA7A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 744B044C2C240740000A1E89 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 6D8EBE232C269478000BDA7A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

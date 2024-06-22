@@ -15,7 +15,7 @@ final class ViewController: UIViewController {
         return waveSecond
     }()
     
-    private lazy var label: UILabel = {
+    private lazy var loginLabel: UILabel = {
         let label = UILabel()
         label.text = "Login"
         label.textColor = .white
@@ -35,27 +35,7 @@ final class ViewController: UIViewController {
         textField.layer.shadowRadius = 10
         textField.layer.shouldRasterize = true
         textField.layer.rasterizationScale = UIScreen.main.scale
-        let iconView = UIView(frame: CGRect(x: 20,
-                                            y: 0,
-                                            width: 50,
-                                            height: 40))
-        let logView = UIImageView()
-        logView.image = .logMan
-        logView.frame = CGRect(x: 30,
-                               y: 14,
-                               width: 10,
-                               height: 12)
-        let tickView = UIImageView()
-        tickView.image = .tick
-        tickView.frame = CGRect(x: 240,
-                                y: 10,
-                                width: 20,
-                                height: 20)
-        
-        iconView.addSubview(tickView)
-        iconView.addSubview(logView)
-        textField.leftView = iconView
-        textField.leftViewMode = .always
+        textField.setLeftIcon(.logMan)
         return textField
         
     }()
@@ -72,24 +52,11 @@ final class ViewController: UIViewController {
         textField.layer.shadowRadius = 10
         textField.layer.shouldRasterize = true
         textField.layer.rasterizationScale = UIScreen.main.scale
-        
-        let iconView = UIView(frame: CGRect(x: 20,
-                                            y: 0,
-                                            width: 50,
-                                            height: 40))
-        let lockView = UIImageView()
-        lockView.image = .lock
-        lockView.frame = CGRect(x: 30,
-                                y: 14,
-                                width: 10,
-                                height: 12)
-        iconView.addSubview(lockView)
-        textField.leftView = iconView
-        textField.leftViewMode = .always
+        textField.setLeftIcon(.lock)
         return textField
     }()
     
-    private lazy var logInBtn: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
         button.tintColor = .white
@@ -107,7 +74,7 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    private lazy var frgtYourPass: UIButton = {
+    private lazy var forgotButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Forgot your password?", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -119,7 +86,7 @@ final class ViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
-        stackView.spacing = 2
+        stackView.spacing = 10
         return stackView
     }()
     
@@ -184,12 +151,6 @@ final class ViewController: UIViewController {
                                          green: 116/255,
                                          blue: 207/255,
                                          alpha: 1.0)
-        button.layer.cornerRadius = 20
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.3
-        button.layer.shadowOffset = .zero
-        button.layer.shadowRadius = 10
-        button.layer.shouldRasterize = true
         button.layer.rasterizationScale = UIScreen.main.scale
         let iconView = UIView(frame: CGRect(x: 20,
                                             y: 0,
@@ -213,25 +174,41 @@ final class ViewController: UIViewController {
         return label
     }()
     
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        
         setupViews()
         setupConstraints()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        twitterBtn.layer.cornerRadius = 20
+        twitterBtn.layer.shadowColor = UIColor.black.cgColor
+        twitterBtn.layer.shadowOpacity = 0.3
+        twitterBtn.layer.shadowOffset = .zero
+        twitterBtn.layer.shadowRadius = 10
+        twitterBtn.layer.shouldRasterize = true
+    }
+    
     // MARK: - Setup Views
     private func setupViews() {
+        view.backgroundColor = .white
         view.addSubview(waveSecond)
         view.addSubview(waveFirst)
-        view.addSubview(label)
+        view.addSubview(loginLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(logInBtn)
-        view.addSubview(frgtYourPass)
+        view.addSubview(loginButton)
+        view.addSubview(forgotButton)
         view.addSubview(stackViewForLabelAndBtn)
+        
+//        [waveSecond, waveFirst, loginLabel, emailTextField].forEach {
+//            view.addSubview($0)
+//        }
+        
         stackViewForLabelAndBtn.addArrangedSubview(dontHaveAccount)
         stackViewForLabelAndBtn.addArrangedSubview(signUpBtn)
         view.addSubview(stackViewForFbookAndTwitt)
@@ -245,7 +222,7 @@ final class ViewController: UIViewController {
     // MARK: - Setup Constraunts
     private func setupConstraints() {
         waveSecond.snp.makeConstraints { make in
-            make.top.equalTo(waveFirst.snp.bottom).offset(-98)
+            make.top.equalTo(waveFirst.snp.bottom).offset(-100)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
@@ -254,13 +231,14 @@ final class ViewController: UIViewController {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
-        label.snp.makeConstraints { make in
+        
+        loginLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
             make.centerX.equalToSuperview()
         }
         
         emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(68)
+            make.top.equalTo(loginLabel.snp.bottom).offset(68)
             make.leading.equalToSuperview().offset(60)
             make.trailing.equalToSuperview().offset(-60)
             make.height.equalTo(40)
@@ -272,21 +250,22 @@ final class ViewController: UIViewController {
             make.height.equalTo(40)
         }
         
-        logInBtn.snp.makeConstraints { make in
+        loginButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(40)
             make.leading.trailing.equalTo(passwordTextField)
             make.height.equalTo(40)
         }
         
-        frgtYourPass.snp.makeConstraints { make in
-            make.top.equalTo(logInBtn.snp.bottom).offset(20)
+        forgotButton.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
         
         stackViewForLabelAndBtn.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-50)
-            make.leading.equalTo(110)
-            make.trailing.equalTo(-110)
+//            make.leading.equalTo(110)
+//            make.trailing.equalTo(-110)
+            make.centerX.equalToSuperview()
             make.height.equalTo(40)
         }
         
@@ -302,5 +281,16 @@ final class ViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(40)
         }
+    }
+}
+
+extension UITextField {
+    func setLeftIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
     }
 }
