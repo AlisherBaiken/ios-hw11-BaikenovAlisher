@@ -60,14 +60,14 @@
 		744B04372C240610000A1E89 /* ios-hw11-BaikenovAlisher */ = {
 			isa = PBXGroup;
 			children = (
-				6D8EBE262C269993000BDA7A /* SecondController.swift */,
 				744B04382C240610000A1E89 /* AppDelegate.swift */,
 				744B043A2C240610000A1E89 /* SceneDelegate.swift */,
 				744B043C2C240610000A1E89 /* ViewController.swift */,
+				6D8EBE262C269993000BDA7A /* SecondController.swift */,
+				6D8EBE282C269C04000BDA7A /* TabbarController.swift */,
 				744B04412C240611000A1E89 /* Assets.xcassets */,
 				744B04432C240611000A1E89 /* LaunchScreen.storyboard */,
 				744B04462C240611000A1E89 /* Info.plist */,
-				6D8EBE282C269C04000BDA7A /* TabbarController.swift */,
 			);
 			path = "ios-hw11-BaikenovAlisher";
 			sourceTree = "<group>";
