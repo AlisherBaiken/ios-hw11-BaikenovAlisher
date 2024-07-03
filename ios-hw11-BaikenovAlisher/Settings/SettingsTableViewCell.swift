@@ -10,7 +10,9 @@ import SnapKit
 
 final class SettingsTableViewCell: UITableViewCell {
     static let identifiter = "SettingsTableViewCell"
+    
     // MARK: - UI
+    
     private let iconContainer: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 8
@@ -29,7 +31,6 @@ final class SettingsTableViewCell: UITableViewCell {
         let imageNumberView = UIImageView()
         imageNumberView.tintColor = .red
         imageNumberView.contentMode = .scaleAspectFit
-        imageNumberView.frame = CGRect(x: 330, y: 11, width: 25, height: 25)
         return imageNumberView
         
     }()
@@ -62,22 +63,7 @@ final class SettingsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let size = contentView.frame.size.height - 12
-        iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
-        
-        let imageSize: CGFloat = size/1.5
-        iconImagesView.frame = CGRect(x: (size-imageSize)/2, y: (size-imageSize)/2, width: imageSize, height: imageSize)
-        iconImagesView.center = iconContainer.center
-        
-        label.frame = CGRect(
-            x: 25 + iconContainer.frame.size.width,
-            y: 0,
-            width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
-            height: contentView.frame.size.height
-        )
-    }
+    
     
     public func configure(with model: Setting){
         label.text = model.name
@@ -99,10 +85,30 @@ final class SettingsTableViewCell: UITableViewCell {
     //MARK: - Setup Constraints
     
     private func setupConstraints() {
+        
+        iconContainer.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(6)
+            make.bottom.equalToSuperview().offset(-6)
+            make.width.equalTo(iconContainer.snp.height)
+            make.leading.equalToSuperview().offset(13)
+            
+        }
+        iconImagesView.snp.makeConstraints { make in
+            make.width.height.equalTo(iconContainer.snp.width).dividedBy(1.5)
+            make.center.equalTo(iconContainer.snp.center)
+        }
+        
         title.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-11)
             make.bottom.equalToSuperview().offset(-6)
+            make.centerY.equalToSuperview()
         }
         
+        label.snp.makeConstraints { make in
+            make.leading.equalTo(iconContainer.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-6)
+            make.centerY.equalTo(iconContainer.snp.centerY)
+        }
     }
 }
