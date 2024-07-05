@@ -114,10 +114,6 @@ final class SettingsViewController: UIViewController {
         ]))
     }
     
-    // MARK: - State
-    
-    private var selectedIndexPath: IndexPath?
-    
     // MARK: - UI
     
     private lazy var tabelView: UITableView = {
@@ -187,14 +183,19 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        selectedIndexPath = indexPath
         let type = models[indexPath.section].options[indexPath.row]
+        let cellController = CellColorViewController()
+        navigationController?.pushViewController(cellController, animated: true)
         switch type.self {
-        case .staticCell(let model):
+        case .staticCell(model: let model):
+            cellController.setColor =  model.iconBackgroudColor
+            cellController.setText =  model.name
             model.handler()
         case .switchCell(let model):
+            cellController.setColor =  model.iconBackgroudColor
+            cellController.setText =  model.name
             model.handler()
         }
     }
-    
+   
 }

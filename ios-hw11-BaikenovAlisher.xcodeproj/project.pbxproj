@@ -16,6 +16,7 @@
 		74FB49EE2C2B02B400E64660 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB49ED2C2B02B400E64660 /* SettingsViewController.swift */; };
 		74FB49F22C30004400E64660 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB49F12C30004400E64660 /* SettingsTableViewCell.swift */; };
 		74FB49F42C3024F400E64660 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB49F32C3024F400E64660 /* SwitchTableViewCell.swift */; };
+		7E9BDDF72C36515900E628B9 /* CellColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BDDF62C36515900E628B9 /* CellColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		74FB49ED2C2B02B400E64660 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		74FB49F12C30004400E64660 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		74FB49F32C3024F400E64660 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		7E9BDDF62C36515900E628B9 /* CellColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				74FB49ED2C2B02B400E64660 /* SettingsViewController.swift */,
+				7E9BDDF62C36515900E628B9 /* CellColorViewController.swift */,
 				74FB49F12C30004400E64660 /* SettingsTableViewCell.swift */,
 				74FB49F32C3024F400E64660 /* SwitchTableViewCell.swift */,
 			);
@@ -162,6 +165,7 @@
 				744B043D2C240610000A1E89 /* ViewController.swift in Sources */,
 				744B04392C240610000A1E89 /* AppDelegate.swift in Sources */,
 				74FB49F22C30004400E64660 /* SettingsTableViewCell.swift in Sources */,
+				7E9BDDF72C36515900E628B9 /* CellColorViewController.swift in Sources */,
 				744B043B2C240610000A1E89 /* SceneDelegate.swift in Sources */,
 				74FB49EE2C2B02B400E64660 /* SettingsViewController.swift in Sources */,
 				74FB49F42C3024F400E64660 /* SwitchTableViewCell.swift in Sources */,

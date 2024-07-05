@@ -88,6 +88,13 @@ final class SwitchTableViewCell: UITableViewCell {
     //MARK: - Setup Constraints
     
     private func setupConstraints() {
+//        let layoutConstraints = [
+//            iconContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
+//            iconContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+//            iconContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+//            iconContainer.widthAnchor.constraint(equalTo: iconContainer.heightAnchor)
+//        ]
+//        NSLayoutConstraint.activate(layoutConstraints)
         
         iconContainer.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(6)
